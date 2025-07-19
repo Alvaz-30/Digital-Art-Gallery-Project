@@ -4,10 +4,10 @@ Welcome to the **Interactive Digital Art Gallery**, a dynamic and immersive sing
 
 🔗 **Live Demo:** [View Live](https://your-username.github.io/interactive-art-gallery/)
 
-![Dark](<img width="1918" height="928" alt="image" src="https://github.com/user-attachments/assets/66909186-f266-4c66-b0d8-2fde32ef99f0" />
-)  
-![Light](<img width="1918" height="1033" alt="image" src="https://github.com/user-attachments/assets/5155f6cc-a275-4970-8084-a35860a3a6f6" />
-) 
+<img width="1918" height="928" alt="image" src="https://github.com/user-attachments/assets/66909186-f266-4c66-b0d8-2fde32ef99f0" />
+ 
+<img width="1918" height="1033" alt="image" src="https://github.com/user-attachments/assets/5155f6cc-a275-4970-8084-a35860a3a6f6" />
+
 ---
 
 ## ✨ Features
