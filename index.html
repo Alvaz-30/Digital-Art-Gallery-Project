@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Art Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <button id="theme-toggle" class="ui-button">
+        <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+
+    <div class="gallery-container">
+        <section class="gallery-section">
+            <div class="text-center mb-8"><h1 class="text-4xl md:text-6xl font-bold tracking-tighter">Interactive Gallery</h1><p class="text-lg md:text-xl text-muted mt-2">Move your mouse or finger over the image.</p></div>
+            <div class="art-piece" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2070&auto=format&fit=crop');" data-depth="0.02"></div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="text-center mb-8"><h2 class="text-3xl md:text-5xl font-bold tracking-tight">Digital Canvas</h2><p class="text-lg text-muted mt-2">Create something. Your work is saved automatically.</p></div>
+            <canvas id="drawingCanvas"></canvas>
+            <div class="mt-4 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 p-2">
+                <div class="flex items-center gap-4">
+                    <input type="color" id="colorPicker" value="#FFFFFF" title="Brush Color">
+                    <input type="range" id="brushSize" min="1" max="50" value="5" title="Brush Size">
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="clearCanvasBtn" class="ui-button">Clear</button>
+                    <button id="downloadBtn" class="ui-button">Download</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+             <div class="text-center mb-8"><h2 class="text-3xl md:text-5xl font-bold tracking-tight">Web Audio Theremin</h2><p id="theremin-text" class="text-lg text-muted mt-2">Click Start, then interact with the box.</p></div>
+            <div id="theremin"><div id="theremin-indicator" style="display: none;"></div></div>
+            <div class="mt-6 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+                <button id="audioToggleBtn" class="ui-button mb-2 sm:mb-0">Start Audio</button>
+                <div id="oscillator-controls" class="flex flex-wrap justify-center gap-2" style="display: none;">
+                    <button class="ui-button osc-btn active" data-type="sine">Sine</button>
+                    <button class="ui-button osc-btn" data-type="square">Square</button>
+                    <button class="ui-button osc-btn" data-type="sawtooth">Saw</button>
+                    <button class="ui-button osc-btn" data-type="triangle">Triangle</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="gallery-section">
+            <div class="text-center mb-8"><h2 class="text-3xl md:text-5xl font-bold tracking-tight">Particle Nexus</h2><p class="text-lg text-muted mt-2">A universe that responds to your presence.</p></div>
+            <canvas id="particleCanvas"></canvas>
+        </section>
+
+        <section class="gallery-section">
+            <div class="text-center mb-8"><h2 class="text-3xl md:text-5xl font-bold tracking-tight">Kinetic Sculpture</h2><p class="text-lg text-muted mt-2">Move your mouse or finger to control the light.</p></div>
+            <div id="three-container"></div>
+        </section>
+    </div>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
